@@ -1,5 +1,18 @@
 class PostsController < ApplicationController
   def index
-    @posts=Post.all
+    @konnos=Konno.all
   end
+
+  def show
+    @konno =Konno.find_by(id:params[:id])
+  end
+
+  def new
+  end
+
+  def create
+    redirect_to("/posts/index")
+  end
+
+
 end

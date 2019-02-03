@@ -1,0 +1,2 @@
+class Konno < ApplicationRecord
+end

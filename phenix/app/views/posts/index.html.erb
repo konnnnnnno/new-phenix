@@ -2,6 +2,16 @@
   <div class="container">
     <% @konno.each do |konno|%>
       <div class="posts-index-item">
+        <div class="post-left">
+　　#エラーになる
+          <img src="<%= "/user_image/1.jpg" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            #エラーになる。名前だと出てこない。
+            <%= link_to(konno.id, "/users/#{konno.id}") %>
+</div>
+          </div>
         <%=link_to(konno.content,"/posts/#{konno.id}")%>
       </div>
     <%end%>

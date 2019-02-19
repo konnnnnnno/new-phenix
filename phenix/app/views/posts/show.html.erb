@@ -1,15 +1,18 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-        <%=@konno.content%>
+      <div class="post-user-name">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      </div>
+      <%=@konno.content%>
       <div class="post-time">
         <%=@konno.created_at%>
         <div class="post-menus">
         <%=link_to("編集", "/posts/#{@konno.id}/edit")%>
-
         <%= link_to("削除", "/posts/#{@konno.id}/destroy", {method: "post"}) %>
-      </div>
         </div>
+      </div>
     </div>
   </div>
 </div>

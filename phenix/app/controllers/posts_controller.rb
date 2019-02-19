@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @konno = Konno.find_by(id: params[:id])
+    @user = @konno.user
   end
 
   def new
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @konno = Konno.new(content: params[:content])
+    @konno = Konno.new(content: params[:content],user_id: @current_user.id)
     if @konno.save
       flash[:notice]= "投稿成功"
       redirect_to("/index")
